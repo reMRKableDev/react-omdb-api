@@ -22,7 +22,12 @@ class Movies extends Component {
         </figure>
       </article>
     ) : (
-      <h2>Search For Your Movie And I Will Change</h2>
+      <article>
+        <h2>Search For Your Movie And I Will Change </h2>
+        <p>
+          <span role="img" aria-label="coder"> 👨🏾‍💻</span> reMRKable Dev &copy;... made with love <span role="img" aria-label="coder"> 👨🏾‍💻</span>
+        </p>
+      </article>
     );
   }
 }

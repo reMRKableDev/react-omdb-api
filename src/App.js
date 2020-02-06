@@ -48,7 +48,7 @@ class App extends Component {
     return (
       <div className="App">
         <header className="App_header">
-          <h1>Search For Your Favorite Movie</h1>
+          <h1>Find Your Favorite Movie</h1>
           <Form
             handleClick={this.handleClick}
             handleChange={this.handleChangeForTitle}
