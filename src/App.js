@@ -7,7 +7,7 @@ import "./App.css";
 const OMDB_API_KEY = "39aae644";
 
 /* 
-  1. App Component for our application.
+  1. Base App Component for our application.
 
   2. Render a form which allows the user to submit data.
 
@@ -20,27 +20,28 @@ const OMDB_API_KEY = "39aae644";
   5. Display the retrieved movie
 */
 
+// 1. Base Component
 class App extends Component {
   state = {
     userInput: "",
-    retrievedOMDBApiData: ""
+    retrievedMovieData: ""
   };
 
-  // function that retrieves the user input and updates my state
+  // 3. function that retrieves the user input and updates my state
   handleChangeForTitle = event => {
     this.setState({
       userInput: event.target.value
     });
   };
 
-  // function that uses this.state.userInput and searches from OMDB API.
+  // 4. function that uses this.state.userInput and searches from OMDB API.
   handleClick = event => {
     event.preventDefault();
 
     Axios.get(
       `http://www.omdbapi.com/?apikey=${OMDB_API_KEY}&t=${this.state.userInput}`
     )
-      .then(response => this.setState({ retrievedOMDBApiData: response.data }))
+      .then(response => this.setState({ retrievedMovieData: response.data }))
       .catch(error => console.error(`Something went wrong ${error}`));
   };
 
@@ -49,13 +50,16 @@ class App extends Component {
       <div className="App">
         <header className="App_header">
           <h1>Find Your Favorite Movie</h1>
+
+          {/* 2. Form for submitting data*/}
           <Form
             handleClick={this.handleClick}
             handleChange={this.handleChangeForTitle}
           />
         </header>
         <section>
-          <Movies movies={this.state.retrievedOMDBApiData} />
+          {/* 5. Display retrieved movie */}
+          <Movies movies={this.state.retrievedMovieData} />
         </section>
       </div>
     );
