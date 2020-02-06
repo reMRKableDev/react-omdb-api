@@ -1,16 +1,16 @@
 import React from "react";
 import "./Form.css";
 
-function Form({ handleSubmit, handleChange }) {
+function Form({ handleClick, handleChange }) {
   return (
-    <form onSubmit={handleSubmit}>
+    <form>
       <input
         type="text"
+        placeholder="Enter Your Movie Title..."
         name="movie"
-        placeholder="Enter Movie name"
         onChange={handleChange}
       />
-      <button type="submit">Search</button>
+      <button onClick={handleClick}>Search</button>
     </form>
   );
 }

@@ -1,30 +1,28 @@
 import React, { Component } from "react";
 
 class Movies extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      movieList: ""
-    };
-  }
+  state = {
+    moviesToShow: ""
+  };
 
+  // Lifecyle method to check state status when updated
   componentDidUpdate(prevProps) {
     if (this.props.movies !== prevProps.movies) {
-      this.setState({ movieList: this.props.movies });
+      this.setState({ moviesToShow: this.props.movies });
     }
   }
 
   render() {
-    return this.state.movieList ? (
+    return this.state.moviesToShow ? (
       <article>
-        <h2>{this.state.movieList.Title}</h2>
+        <h2>{this.state.moviesToShow.Title}</h2>
         <figure>
-          <img src={this.state.movieList.Poster} alt="movie-poster" />
-          <figcaption>{this.state.movieList.Plot}</figcaption>
+          <img src={this.state.moviesToShow.Poster} alt="" />
+          <figcaption>Actors: {this.state.moviesToShow.Actors}</figcaption>
         </figure>
       </article>
     ) : (
-      <p>bye</p>
+      <h2>Search For Your Movie And I Will Change</h2>
     );
   }
 }
