@@ -1,9 +1,14 @@
+@import url("https://fonts.googleapis.com/css?family=Josefin+Sans|Limelight&display=swap");
+
 .App {
   text-align: center;
 }
 
 .App_header {
   background-color: #f76b6c;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100%25' height='100%25' viewBox='0 0 100 60'%3E%3Cg %3E%3Crect fill='%23f76b6c' width='11' height='11'/%3E%3Crect fill='%23f56a6c' x='10' width='11' height='11'/%3E%3Crect fill='%23f36a6b' y='10' width='11' height='11'/%3E%3Crect fill='%23f1696b' x='20' width='11' height='11'/%3E%3Crect fill='%23ef696a' x='10' y='10' width='11' height='11'/%3E%3Crect fill='%23ed686a' y='20' width='11' height='11'/%3E%3Crect fill='%23eb6869' x='30' width='11' height='11'/%3E%3Crect fill='%23e96769' x='20' y='10' width='11' height='11'/%3E%3Crect fill='%23e76668' x='10' y='20' width='11' height='11'/%3E%3Crect fill='%23e46668' y='30' width='11' height='11'/%3E%3Crect fill='%23e26568' x='40' width='11' height='11'/%3E%3Crect fill='%23e06567' x='30' y='10' width='11' height='11'/%3E%3Crect fill='%23de6467' x='20' y='20' width='11' height='11'/%3E%3Crect fill='%23dc6366' x='10' y='30' width='11' height='11'/%3E%3Crect fill='%23d96366' y='40' width='11' height='11'/%3E%3Crect fill='%23d76265' x='50' width='11' height='11'/%3E%3Crect fill='%23d56265' x='40' y='10' width='11' height='11'/%3E%3Crect fill='%23d36164' x='30' y='20' width='11' height='11'/%3E%3Crect fill='%23d06064' x='20' y='30' width='11' height='11'/%3E%3Crect fill='%23ce6063' x='10' y='40' width='11' height='11'/%3E%3Crect fill='%23cc5f63' y='50' width='11' height='11'/%3E%3Crect fill='%23c95e62' x='60' width='11' height='11'/%3E%3Crect fill='%23c75e62' x='50' y='10' width='11' height='11'/%3E%3Crect fill='%23c45d61' x='40' y='20' width='11' height='11'/%3E%3Crect fill='%23c25d61' x='30' y='30' width='11' height='11'/%3E%3Crect fill='%23bf5c60' x='20' y='40' width='11' height='11'/%3E%3Crect fill='%23bd5b60' x='10' y='50' width='11' height='11'/%3E%3Crect fill='%23ba5b5f' x='70' width='11' height='11'/%3E%3Crect fill='%23b75a5f' x='60' y='10' width='11' height='11'/%3E%3Crect fill='%23b5595e' x='50' y='20' width='11' height='11'/%3E%3Crect fill='%23b2595e' x='40' y='30' width='11' height='11'/%3E%3Crect fill='%23af585d' x='30' y='40' width='11' height='11'/%3E%3Crect fill='%23ac575d' x='20' y='50' width='11' height='11'/%3E%3Crect fill='%23a9565c' x='80' width='11' height='11'/%3E%3Crect fill='%23a7565c' x='70' y='10' width='11' height='11'/%3E%3Crect fill='%23a4555b' x='60' y='20' width='11' height='11'/%3E%3Crect fill='%23a1545b' x='50' y='30' width='11' height='11'/%3E%3Crect fill='%239d545a' x='40' y='40' width='11' height='11'/%3E%3Crect fill='%239a535a' x='30' y='50' width='11' height='11'/%3E%3Crect fill='%23975259' x='90' width='11' height='11'/%3E%3Crect fill='%23945159' x='80' y='10' width='11' height='11'/%3E%3Crect fill='%23905158' x='70' y='20' width='11' height='11'/%3E%3Crect fill='%238d5058' x='60' y='30' width='11' height='11'/%3E%3Crect fill='%238a4f57' x='50' y='40' width='11' height='11'/%3E%3Crect fill='%23864e57' x='40' y='50' width='11' height='11'/%3E%3Crect fill='%23824e56' x='90' y='10' width='11' height='11'/%3E%3Crect fill='%237e4d56' x='80' y='20' width='11' height='11'/%3E%3Crect fill='%237a4c55' x='70' y='30' width='11' height='11'/%3E%3Crect fill='%23764b54' x='60' y='40' width='11' height='11'/%3E%3Crect fill='%23724b54' x='50' y='50' width='11' height='11'/%3E%3Crect fill='%236e4a53' x='90' y='20' width='11' height='11'/%3E%3Crect fill='%23694953' x='80' y='30' width='11' height='11'/%3E%3Crect fill='%23654852' x='70' y='40' width='11' height='11'/%3E%3Crect fill='%23604752' x='60' y='50' width='11' height='11'/%3E%3Crect fill='%235a4651' x='90' y='30' width='11' height='11'/%3E%3Crect fill='%23554650' x='80' y='40' width='11' height='11'/%3E%3Crect fill='%234f4550' x='70' y='50' width='11' height='11'/%3E%3Crect fill='%2348444f' x='90' y='40' width='11' height='11'/%3E%3Crect fill='%2341434f' x='80' y='50' width='11' height='11'/%3E%3Crect fill='%2339424e' x='90' y='50' width='11' height='11'/%3E%3C/g%3E%3C/svg%3E");
+  background-attachment: fixed;
+  background-size: cover;
   min-height: 25vh;
   display: flex;
   flex-direction: column;
@@ -11,4 +16,8 @@
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
+}
+
+h1 {
+  font-family: "Limelight", cursive;
 }

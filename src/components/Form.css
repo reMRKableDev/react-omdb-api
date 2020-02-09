@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css?family=Josefin+Sans|Limelight&display=swap");
+
 form {
   border: 5px solid #fff;
   width: 60%;
@@ -9,15 +11,18 @@ form {
 }
 
 form input {
-  padding: 10px;
+  padding: 15px;
   margin: 0 5px;
   outline: none;
-  width: 70%;
+  width: 100%;
+  border: none;
+  font-family: "Josefin Sans", sans-serif;
+  font-size: 16px;
 }
 
 form button {
   display: inline-block;
-  padding: 5px;
+  padding: 10px;
   cursor: pointer;
   text-align: center;
   text-decoration: none;
@@ -25,9 +30,10 @@ form button {
   color: #fff;
   background-color: #39424e;
   border: none;
-  width: 20%;
-  -webkit-transition-duration: 0.4s; /* Safari */
+  width: 100%;
+  -webkit-transition-duration: 0.4s;
   transition-duration: 0.4s;
+  font-family: "Josefin Sans", sans-serif;
 }
 
 form button:hover {
@@ -38,4 +44,14 @@ form button:hover {
 form button:active {
   box-shadow: 0 5px #666;
   transform: translateY(4px);
+}
+
+@media screen and (min-width: 800px) {
+  form button {
+    width: 20%;
+  }
+
+  form input {
+    width: 70%;
+  }
 }

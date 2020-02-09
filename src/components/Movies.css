@@ -1,0 +1,63 @@
+@import url("https://fonts.googleapis.com/css?family=Josefin+Sans|Limelight&display=swap");
+
+h2 {
+  color: #39424e;
+  font-family: "Josefin Sans", sans-serif;
+}
+
+p {
+  font-family: "Josefin Sans", sans-serif;
+}
+
+.red_text {
+  color: #f76b6c;
+}
+
+.flex_row {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+.flex_column {
+  display: flex;
+  flex-direction: column;
+  flex-basis: 100%;
+}
+
+.justify_center {
+    justify-content: center;
+}
+
+.description_align {
+  text-align: center;
+}
+
+.figure_container {
+  width:100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.figure_container img {
+  width: 20vw;
+  height: auto;
+}
+
+.figure_container svg {
+  width: 20vw;
+  height: auto;
+  fill: #f76b6c;
+  stroke: #39424e;
+}
+
+@media screen and (min-width: 800px) {
+  .flex_column {
+    flex: 1;
+  }
+  .description_align {
+    text-align: left;
+  }
+}
