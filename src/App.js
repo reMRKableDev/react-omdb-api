@@ -38,7 +38,7 @@ class App extends Component {
     event.preventDefault();
 
     Axios.get(
-      `http://www.omdbapi.com/?apikey=${API_KEY}&t=${this.state.userInput}`
+      `https://www.omdbapi.com/?apikey=${API_KEY}&t=${this.state.userInput}`
     )
       .then(response => this.setState({ retrievedMovieData: response.data }))
       .catch(error => console.error(`Something went wrong ${error}`));
