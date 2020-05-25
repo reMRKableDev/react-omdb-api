@@ -1,6 +1,6 @@
 # React OMDB API 🚀🚀🚀
 
-[![Netlify Status](https://api.netlify.com/api/v1/badges/771fb2bb-c56a-4265-9392-c09736273e57/deploy-status)](https://app.netlify.com/sites/remrkable-moviefinder/deploys) 
+[![CodeFactor](https://www.codefactor.io/repository/github/remrkabledev/react-omdb-api/badge)](https://www.codefactor.io/repository/github/remrkabledev/react-omdb-api) [![Netlify Status](https://api.netlify.com/api/v1/badges/771fb2bb-c56a-4265-9392-c09736273e57/deploy-status)](https://app.netlify.com/sites/remrkable-moviefinder/deploys)
 
 This project is an introduction to using React.js for extracting data from an API. It focuses on:
 
@@ -28,7 +28,7 @@ Git
 
 ### How To:
 
-To use the app:
+To use the app, visit the web link in the short description above. If you would like to try it on your own:
 
 ```
 1. Fork and/or Clone repo.
