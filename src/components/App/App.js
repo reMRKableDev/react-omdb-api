@@ -1,8 +1,8 @@
 import React, { Component } from "react";
 import Axios from "axios";
-import Form from "./Form";
-import Movies from "./Movies";
-import "./styles/App.css";
+import Form from "../Form/Form";
+import Movies from "../Movies/Movies";
+import "./App.css";
 
 const API_KEY = "39aae644";
 

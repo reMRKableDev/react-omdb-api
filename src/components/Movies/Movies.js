@@ -1,9 +1,8 @@
 import React, { Component } from "react";
-import "./styles/Movies.css";
-
-import MovieNotFound from "./MovieNotFound";
-import MovieFound from "./MovieFound";
-import SearchInfo from "./SearchInfo";
+import MovieNotFound from "./MovieNotFound/MovieNotFound";
+import MovieFound from "./MovieFound/MovieFound";
+import SearchInfo from "../../pages/SearchInfoPage/SearchInfo";
+import "./Movies.css";
 
 class Movies extends Component {
   state = {
