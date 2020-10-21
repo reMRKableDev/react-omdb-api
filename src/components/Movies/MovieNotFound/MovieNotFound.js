@@ -1,5 +1,5 @@
 import React from "react";
-import "./styles/Movies.css";
+import "../Movies.css";
 
 const MovieNotFound = ({ notFound }) => {
   return (

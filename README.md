@@ -6,11 +6,11 @@ This project is an introduction to using React.js for extracting data from an AP
 
 - Making API requests in order to retrieve JSON data.
 - Creating event handling functions for forms.
-- The updating of Components and their State.
+- Updating of Components and their State.
 - Passing of State values as Props between Components.
-- Utilizing Component life cycle methods (componentDidUpdate()) in order to check for updates made to the State of Components.
+- Using React lifecycle methods (such as componentDidUpdate()) to check for updates made to the State of Components.
 
-![moviefinder-gif](moviefinder.gif)
+![moviefinder-gif](./src/assets/images/moviefinder.gif)
 
 ## Getting Started 🏁
 
