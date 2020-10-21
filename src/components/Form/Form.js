@@ -1,5 +1,5 @@
 import React from "react";
-import "./styles/Form.css";
+import "./Form.css";
 
 function Form({ handleClick, handleChange }) {
   return (
