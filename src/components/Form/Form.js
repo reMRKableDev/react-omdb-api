@@ -3,7 +3,7 @@ import "./Form.css";
 
 function Form({ handleClick, handleChange }) {
   return (
-    <form>
+    <div>
       <input
         type="text"
         placeholder="Enter Your Movie Title..."
@@ -11,7 +11,7 @@ function Form({ handleClick, handleChange }) {
         onChange={handleChange}
       />
       <button onClick={handleClick}>Search</button>
-    </form>
+    </div>
   );
 }
 
