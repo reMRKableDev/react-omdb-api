@@ -2,7 +2,7 @@ import React from "react";
 import { render, screen, fireEvent } from "@testing-library/react";
 import Form from "./Form";
 
-describe("SearchInto Test Suite", () => {
+describe("Form Test Suite", () => {
   const handleClickMock = jest.fn();
   const handleChangeMock = jest.fn();
 

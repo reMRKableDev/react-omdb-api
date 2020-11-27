@@ -1,8 +1,8 @@
 import React from "react";
-import { render, screen, fireEvent } from "@testing-library/react";
+import { render, screen } from "@testing-library/react";
 import MovieNotFound from "./MovieNotFound";
 
-describe("SearchInto Test Suite", () => {
+describe("MovieNotFound Test Suite", () => {
   const notFound = "Movie Not Found!";
 
   beforeEach(() => {
