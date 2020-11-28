@@ -1,7 +1,10 @@
+import mockAxios from "axios";
+import { sampleMovie } from "../fixtures";
 import {
-  handleChangeForTitleHelper,
+  handleApiCallHelper,
   handleFormSubmitHelper,
   handleMovieToSearchHelper,
+  handleChangeForTitleHelper,
 } from "./index";
 
 describe("Helper Functions Test Suite", () => {
@@ -44,5 +47,18 @@ describe("Helper Functions Test Suite", () => {
     handleMovieToSearchHelper(movieInputFake, setMovieToSearchMethodMock);
 
     expect(setMovieToSearchMethodMock).toBeCalled();
+  });
+
+  test("should validate handleApiCallHelper ", async () => {
+    mockAxios.get.mockImplementationOnce(() =>
+      Promise.resolve({ data: sampleMovie })
+    );
+
+    const userInputFake = "hello";
+    const setMovieMethodMock = jest.fn();
+
+    await handleApiCallHelper(userInputFake, setMovieMethodMock);
+
+    expect(setMovieMethodMock).toBeCalled();
   });
 });
