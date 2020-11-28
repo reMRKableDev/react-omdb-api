@@ -1,7 +1,6 @@
 import React from "react";
 import { render, screen } from "@testing-library/react";
 import App from "./App";
-import Form from "../Form/Form";
 
 describe("SearchInto Test Suite", () => {
   test("should validate component renders with correct movie ", () => {
