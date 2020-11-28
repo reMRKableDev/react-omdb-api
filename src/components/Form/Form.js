@@ -1,16 +1,25 @@
-import React from "react";
+import React, { useState } from "react";
+import { handleFormSubmitHelper, handleChangeForTitleHelper } from "../helpers";
 import "./Form.css";
 
-function Form({ handleClick, handleChange }) {
+function Form({ handleMovieSearch }) {
+  const [userInput, setUserInput] = useState("");
+
   return (
-    <form>
+    <form
+      onSubmit={(e) =>
+        handleFormSubmitHelper(e, userInput, handleMovieSearch, setUserInput)
+      }
+      className="form"
+    >
       <input
         type="text"
         placeholder="Enter Your Movie Title..."
         name="movie"
-        onChange={handleChange}
+        value={userInput}
+        onChange={(e) => handleChangeForTitleHelper(e, setUserInput)}
       />
-      <button onClick={handleClick}>Search</button>
+      <button type="submit">Search</button>
     </form>
   );
 }

@@ -23,7 +23,11 @@ const MovieFound = ({ foundMovie }) => {
       <section className="flex_row">
         <div className="flex_column">
           <figure className="figure_container">
-            <img src={foundMovie.Poster} alt="movie-poster" />
+            <img
+              src={foundMovie.Poster}
+              alt="movie-poster"
+              data-testid="movie-image"
+            />
           </figure>
         </div>
         <div className="flex_column justify_center description_align">

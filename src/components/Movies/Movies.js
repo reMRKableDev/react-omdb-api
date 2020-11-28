@@ -9,19 +9,18 @@ const Movies = (props) => {
   const [movieToShow, setMovieToShow] = useState("");
 
   const displayMovieResults = () => {
-        return movieToShow.Error ? (
-          <MovieNotFound notFound={movieToShow.Error} />
-        ) : (
-          <MovieFound foundMovie={movieToShow} />
-        );
-      };
+    return movieToShow.Error ? (
+      <MovieNotFound notFound={movieToShow.Error} />
+    ) : (
+      <MovieFound foundMovie={movieToShow} />
+    );
+  };
 
   useEffect(() => {
-      setMovieToShow(movies)
-  }, [movies])
-  return (
-    movieToShow ? displayMovieResults() : <SearchInfo />
-  );
-}
+    setMovieToShow(movies);
+  }, [movies]);
+
+  return movieToShow ? displayMovieResults() : <SearchInfo />;
+};
 
 export default Movies;
