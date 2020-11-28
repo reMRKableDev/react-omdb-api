@@ -1,5 +1,4 @@
-import Axios from "axios";
-const { REACT_APP_API_KEY } = process.env;
+import { getApiDataService } from "../services";
 
 export const handleChangeForTitleHelper = (event, setUserInputMethod) => {
   setUserInputMethod(event.target.value);
@@ -24,9 +23,7 @@ export const handleMovieToSearchHelper = (
 };
 
 export const handleApiCallHelper = async (userInput, setMovieMethod) => {
-  const response = await Axios.get(
-    `https://www.omdbapi.com/?apikey=${REACT_APP_API_KEY}&t=${userInput}`
-  );
+  const responseData = await getApiDataService(userInput);
 
-  return setMovieMethod(response.data);
+  return setMovieMethod(responseData);
 };

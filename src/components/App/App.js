@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import Form from "../Form/Form";
 import Movies from "../Movies/Movies";
 import "./App.css";
-import { handleApiCallHelper } from "../helpers";
+import { handleApiCallHelper } from "../../helpers";
 
 const App = () => {
   const [retrievedMovie, setRetrievedMovie] = useState("");
