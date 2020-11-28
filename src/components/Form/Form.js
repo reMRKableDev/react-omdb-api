@@ -1,5 +1,8 @@
 import React, { useState } from "react";
-import { handleFormSubmitHelper, handleChangeForTitleHelper } from "../helpers";
+import {
+  handleFormSubmitHelper,
+  handleChangeForTitleHelper,
+} from "../../helpers";
 import "./Form.css";
 
 function Form({ handleMovieSearch }) {

@@ -1,9 +1,9 @@
 import React from "react";
 import { render, screen } from "@testing-library/react";
 import Movies from "./Movies";
-import { sampleMovie } from "./TestData";
+import { sampleMovie } from "../../fixtures";
 
-describe("SearchInto Test Suite", () => {
+describe("Movies Test Suite", () => {
   test("should validate component renders with correct movie ", () => {
     render(<Movies movies={sampleMovie} />);
 
