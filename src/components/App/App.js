@@ -1,27 +1,19 @@
-import React, { useState } from "react";
-import Axios from "axios";
+import React, { useState, useEffect } from "react";
 import Form from "../Form/Form";
 import Movies from "../Movies/Movies";
 import "./App.css";
-
-const { REACT_APP_API_KEY } = process.env;
+import { handleApiCallHelper } from "../helpers";
 
 const App = () => {
-  const [userInput, setUserInput] = useState("");
   const [retrievedMovie, setRetrievedMovie] = useState("");
+  const [movieToSearch, setMovieToSearch] = useState("");
 
-  const handleChangeForTitle = (event) => {
-    setUserInput(event.target.value);
-  };
+  useEffect(() => {
+    movieToSearch && handleApiCallHelper(movieToSearch, setRetrievedMovie);
+  }, [movieToSearch]);
 
-  const handleClick = (event) => {
-    event.preventDefault();
-
-    Axios.get(
-      `https://www.omdbapi.com/?apikey=${REACT_APP_API_KEY}&t=${userInput}`
-    )
-      .then((response) => setRetrievedMovie(response.data))
-      .catch((error) => console.error(`Something went wrong ${error}`));
+  const handleMovieToSearch = (movieInput) => {
+    setMovieToSearch(movieInput);
   };
 
   return (
@@ -35,10 +27,7 @@ const App = () => {
           vieFinder
         </h1>
 
-        <Form
-          handleClick={(e) => handleClick(e)}
-          handleChange={(e) => handleChangeForTitle(e)}
-        />
+        <Form handleMovieSearch={handleMovieToSearch} />
       </header>
       <section>
         <Movies movies={retrievedMovie} />

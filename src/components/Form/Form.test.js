@@ -3,13 +3,10 @@ import { render, screen, fireEvent } from "@testing-library/react";
 import Form from "./Form";
 
 describe("Form Test Suite", () => {
-  const handleClickMock = jest.fn();
-  const handleChangeMock = jest.fn();
+  const handleMovieSearchMock = jest.fn();
 
   beforeEach(() => {
-    render(
-      <Form handleClick={handleClickMock} handleChange={handleChangeMock} />
-    );
+    render(<Form handleMovieSearch={handleMovieSearchMock} />);
   });
 
   test("should validate component renders with correct values ", () => {
@@ -29,10 +26,8 @@ describe("Form Test Suite", () => {
       target: { value: inputValue },
     });
 
-    expect(handleChangeMock).toBeCalled();
-
     fireEvent.click(screen.getByText(/search/i));
 
-    expect(handleClickMock).toBeCalled();
+    expect(handleMovieSearchMock).toBeCalled();
   });
 });
