@@ -14,8 +14,9 @@ const App = () => {
     [movieToSearch]
   );
 
-  const handleMovieToSearch = (movieInput) =>
+  const handleMovieToSearch = (movieInput) => {
     setMovieToSearchHelper(movieInput, setMovieToSearch);
+  };
 
   return (
     <div className="App">
