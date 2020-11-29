@@ -1,25 +1,25 @@
 import React from "react";
 import { render, screen } from "@testing-library/react";
 import MovieFound from "./MovieFound";
-import sampleMovie from "../../../fixtures";
+import { fakeSampleMovie }  from "../../../fixtures";
 
 describe("MovieFound Test Suite", () => {
   beforeEach(() => {
-    render(<MovieFound foundMovie={sampleMovie} />);
+    render(<MovieFound foundMovie={fakeSampleMovie} />);
   });
 
   test("should validate component renders with correct values ", () => {
     expect(
-      screen.getByText(`${sampleMovie.Title}(${sampleMovie.Year})`)
+      screen.getByText(`${fakeSampleMovie.Title}(${fakeSampleMovie.Year})`)
     ).toBeInTheDocument();
-    expect(screen.getByText(sampleMovie.Plot)).toBeInTheDocument();
-    expect(screen.getByText(sampleMovie.Actors)).toBeInTheDocument();
-    expect(screen.getByTestId("movie-image").src).toMatch(sampleMovie.Poster);
-    expect(screen.getByText(sampleMovie.Rated)).toBeInTheDocument();
-    expect(screen.getByText(sampleMovie.Runtime)).toBeInTheDocument();
-    expect(screen.getByText(sampleMovie.Genre)).toBeInTheDocument();
-    expect(screen.getByText(sampleMovie.Director)).toBeInTheDocument();
-    expect(screen.getByText(sampleMovie.Country)).toBeInTheDocument();
-    expect(screen.getByText(sampleMovie.Language)).toBeInTheDocument();
+    expect(screen.getByText(fakeSampleMovie.Plot)).toBeInTheDocument();
+    expect(screen.getByText(fakeSampleMovie.Actors)).toBeInTheDocument();
+    expect(screen.getByTestId("movie-image").src).toMatch(fakeSampleMovie.Poster);
+    expect(screen.getByText(fakeSampleMovie.Rated)).toBeInTheDocument();
+    expect(screen.getByText(fakeSampleMovie.Runtime)).toBeInTheDocument();
+    expect(screen.getByText(fakeSampleMovie.Genre)).toBeInTheDocument();
+    expect(screen.getByText(fakeSampleMovie.Director)).toBeInTheDocument();
+    expect(screen.getByText(fakeSampleMovie.Country)).toBeInTheDocument();
+    expect(screen.getByText(fakeSampleMovie.Language)).toBeInTheDocument();
   });
 });
