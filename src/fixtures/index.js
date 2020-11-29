@@ -1,4 +1,4 @@
-export const sampleMovie = {
+export const fakeSampleMovie = {
   Title: "Hello",
   Year: "2008",
   Rated: "N/A",
@@ -30,3 +30,5 @@ export const sampleMovie = {
   Website: "N/A",
   Response: "True",
 };
+
+export const fakeUserInput = "hello";

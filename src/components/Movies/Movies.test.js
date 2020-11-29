@@ -1,13 +1,13 @@
 import React from "react";
 import { render, screen } from "@testing-library/react";
 import Movies from "./Movies";
-import { sampleMovie } from "../../fixtures";
+import { fakeSampleMovie } from "../../fixtures";
 
 describe("Movies Test Suite", () => {
   test("should validate component renders with correct movie ", () => {
-    render(<Movies movies={sampleMovie} />);
+    render(<Movies movies={fakeSampleMovie} />);
 
-    expect(screen.getByText(sampleMovie.Plot)).toBeInTheDocument();
+    expect(screen.getByText(fakeSampleMovie.Plot)).toBeInTheDocument();
   });
 
   test("should validate component renders with correct movie ", () => {

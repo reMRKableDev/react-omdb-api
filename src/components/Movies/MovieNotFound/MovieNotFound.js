@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 import "../Movies.css";
 
 const MovieNotFound = ({ notFound }) => {
@@ -21,12 +22,16 @@ const MovieNotFound = ({ notFound }) => {
         </svg>
       </figure>
       <p>
-        But don't worry, it could be a typo! <br /> We really need you to spell
-        the movie title exactly as it is originally written. Try again or search
-        for a new movie
+        But don&quot;t worry, it could be a typo! <br /> We really need you to
+        spell the movie title exactly as it is originally written. Try again or
+        search for a new movie
       </p>
     </article>
   );
 };
 
 export default MovieNotFound;
+
+MovieNotFound.propTypes = {
+  notFound: PropTypes.string.isRequired,
+};

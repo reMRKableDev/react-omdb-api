@@ -1,12 +1,13 @@
 import React, { useState, useEffect } from "react";
+import PropTypes from "prop-types";
 import MovieNotFound from "./MovieNotFound/MovieNotFound";
 import MovieFound from "./MovieFound/MovieFound";
 import SearchInfo from "../../pages/SearchInfoPage/SearchInfo";
+import { isMovieObjectEmptyHelper } from "../../helpers";
 import "./Movies.css";
 
-const Movies = (props) => {
-  const { movies } = props;
-  const [movieToShow, setMovieToShow] = useState("");
+const Movies = ({ movies }) => {
+  const [movieToShow, setMovieToShow] = useState({});
 
   const displayMovieResults = () => {
     return movieToShow.Error ? (
@@ -20,7 +21,17 @@ const Movies = (props) => {
     setMovieToShow(movies);
   }, [movies]);
 
-  return movieToShow ? displayMovieResults() : <SearchInfo />;
+  return isMovieObjectEmptyHelper(movieToShow) ? (
+    <SearchInfo />
+  ) : (
+    displayMovieResults()
+  );
 };
 
 export default Movies;
+
+Movies.propTypes = {
+  movies: PropTypes.objectOf(
+    PropTypes.oneOfType([PropTypes.string, PropTypes.array])
+  ).isRequired,
+};

@@ -1,8 +1,10 @@
 import mockAxios from "axios";
-import { sampleMovie } from "../fixtures";
+import { fakeSampleMovie, fakeUserInput } from "../fixtures";
 import {
   handleApiCallHelper,
+  setMovieToSearchHelper,
   handleFormSubmitHelper,
+  isMovieObjectEmptyHelper,
   handleMovieToSearchHelper,
   handleChangeForTitleHelper,
 } from "./index";
@@ -12,7 +14,7 @@ describe("Helper Functions Test Suite", () => {
     const setUserInputMethodMock = jest.fn();
     const eventFake = {
       target: {
-        value: "dummyData",
+        value: fakeUserInput,
       },
     };
 
@@ -24,14 +26,13 @@ describe("Helper Functions Test Suite", () => {
   test("should validate handleFormSubmitHelper ", () => {
     const setUserInputMethodMock = jest.fn();
     const movieSearchMethodMock = jest.fn();
-    const userInputFake = "bad boys";
     const eventFake = {
       preventDefault: () => jest.fn(),
     };
 
     handleFormSubmitHelper(
       eventFake,
-      userInputFake,
+      fakeUserInput,
       movieSearchMethodMock,
       setUserInputMethodMock
     );
@@ -42,23 +43,38 @@ describe("Helper Functions Test Suite", () => {
 
   test("should validate handleMovieToSearchHelper ", () => {
     const setMovieToSearchMethodMock = jest.fn();
-    const movieInputFake = "bad boys";
-
-    handleMovieToSearchHelper(movieInputFake, setMovieToSearchMethodMock);
+    handleMovieToSearchHelper(fakeUserInput, setMovieToSearchMethodMock);
 
     expect(setMovieToSearchMethodMock).toBeCalled();
   });
 
   test("should validate handleApiCallHelper ", async () => {
     mockAxios.get.mockImplementationOnce(() =>
-      Promise.resolve({ data: sampleMovie })
+      Promise.resolve({ data: fakeSampleMovie })
     );
 
-    const userInputFake = "hello";
     const setMovieMethodMock = jest.fn();
-
-    await handleApiCallHelper(userInputFake, setMovieMethodMock);
+    await handleApiCallHelper(fakeUserInput, setMovieMethodMock);
 
     expect(setMovieMethodMock).toBeCalled();
+  });
+
+  test("should validate isMovieObjectEmptyHelper returns true ", () => {
+    const results = isMovieObjectEmptyHelper({});
+
+    expect(results).toBe(true);
+  });
+
+  test("should validate isMovieObjectEmptyHelper returns false ", () => {
+    const results = isMovieObjectEmptyHelper(fakeSampleMovie);
+
+    expect(results).toBe(false);
+  });
+
+  test("should validate setMovieToSearchHelper ", () => {
+    const setMovieToSearchMethod = jest.fn();
+    setMovieToSearchHelper(fakeUserInput, setMovieToSearchMethod);
+
+    expect(setMovieToSearchMethod).toBeCalled();
   });
 });

@@ -1,4 +1,4 @@
-import { getApiDataService } from "../services";
+import getApiDataService from "../services";
 
 export const handleChangeForTitleHelper = (event, setUserInputMethod) => {
   setUserInputMethod(event.target.value);
@@ -27,3 +27,10 @@ export const handleApiCallHelper = async (userInput, setMovieMethod) => {
 
   return setMovieMethod(responseData);
 };
+
+export const isMovieObjectEmptyHelper = (movieObjectToShow) =>
+  Object.entries(movieObjectToShow).length === 0 &&
+  movieObjectToShow.constructor === Object;
+
+export const setMovieToSearchHelper = (movieInput, setMovieToSearchMethod) =>
+  setMovieToSearchMethod(movieInput);
