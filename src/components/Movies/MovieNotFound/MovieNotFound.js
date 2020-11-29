@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 import "../Movies.css";
 
 const MovieNotFound = ({ notFound }) => {
@@ -30,3 +31,7 @@ const MovieNotFound = ({ notFound }) => {
 };
 
 export default MovieNotFound;
+
+MovieNotFound.propTypes = {
+  notFound: PropTypes.func.isRequired,
+};
