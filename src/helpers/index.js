@@ -31,3 +31,6 @@ export const handleApiCallHelper = async (userInput, setMovieMethod) => {
 export const isMovieObjectEmptyHelper = (movieObjectToShow) =>
   Object.entries(movieObjectToShow).length === 0 &&
   movieObjectToShow.constructor === Object;
+
+export const setMovieToSearchHelper = (movieInput, setMovieToSearchMethod) =>
+  setMovieToSearchMethod(movieInput);

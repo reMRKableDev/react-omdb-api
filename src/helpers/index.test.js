@@ -2,6 +2,7 @@ import mockAxios from "axios";
 import sampleMovie from "../fixtures";
 import {
   handleApiCallHelper,
+  setMovieToSearchHelper,
   handleFormSubmitHelper,
   isMovieObjectEmptyHelper,
   handleMovieToSearchHelper,
@@ -74,5 +75,13 @@ describe("Helper Functions Test Suite", () => {
     const results = isMovieObjectEmptyHelper(sampleMovie);
 
     expect(results).toBe(false);
+  });
+
+  test("should validate setMovieToSearchHelper ", () => {
+    const movieInputFake = "hello";
+    const setMovieToSearchMethod = jest.fn();
+    setMovieToSearchHelper(movieInputFake, setMovieToSearchMethod);
+
+    expect(setMovieToSearchMethod).toBeCalled();
   });
 });

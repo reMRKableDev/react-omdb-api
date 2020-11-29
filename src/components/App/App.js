@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import Form from "../Form/Form";
 import Movies from "../Movies/Movies";
 import "./App.css";
-import { handleApiCallHelper } from "../../helpers";
+import { handleApiCallHelper, setMovieToSearchHelper } from "../../helpers";
 
 const App = () => {
   const [retrievedMovie, setRetrievedMovie] = useState({});
@@ -14,9 +14,8 @@ const App = () => {
     [movieToSearch]
   );
 
-  const handleMovieToSearch = (movieInput) => {
-    setMovieToSearch(movieInput);
-  };
+  const handleMovieToSearch = (movieInput) =>
+    setMovieToSearchHelper(movieInput, setMovieToSearch);
 
   return (
     <div className="App">
