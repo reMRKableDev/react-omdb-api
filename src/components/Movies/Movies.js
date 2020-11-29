@@ -20,7 +20,12 @@ const Movies = ({ movies }) => {
     setMovieToShow(movies);
   }, [movies]);
 
-  return movieToShow ? displayMovieResults() : <SearchInfo />;
+  return Object.entries(movieToShow).length === 0 &&
+    movieToShow.constructor === Object ? (
+    <SearchInfo />
+  ) : (
+    displayMovieResults()
+  );
 };
 
 export default Movies;
