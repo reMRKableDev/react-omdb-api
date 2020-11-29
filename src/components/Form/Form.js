@@ -1,11 +1,12 @@
 import React, { useState } from "react";
+import PropTypes from "prop-types";
 import {
   handleFormSubmitHelper,
   handleChangeForTitleHelper,
 } from "../../helpers";
 import "./Form.css";
 
-function Form({ handleMovieSearch }) {
+const Form = ({ handleMovieSearch }) => {
   const [userInput, setUserInput] = useState("");
 
   return (
@@ -25,6 +26,14 @@ function Form({ handleMovieSearch }) {
       <button type="submit">Search</button>
     </form>
   );
-}
+};
 
 export default Form;
+
+Form.defaultProps = {
+  handleMovieSearch: () => {},
+};
+
+Form.propTypes = {
+  handleMovieSearch: PropTypes.func,
+};
