@@ -1,5 +1,5 @@
 import mockAxios from "axios";
-import { sampleMovie } from "../fixtures";
+import sampleMovie from "../fixtures";
 import {
   handleApiCallHelper,
   handleFormSubmitHelper,

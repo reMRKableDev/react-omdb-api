@@ -22,9 +22,9 @@ const MovieNotFound = ({ notFound }) => {
         </svg>
       </figure>
       <p>
-        But don&quot;t worry, it could be a typo! <br /> We really need you to spell
-        the movie title exactly as it is originally written. Try again or search
-        for a new movie
+        But don&quot;t worry, it could be a typo! <br /> We really need you to
+        spell the movie title exactly as it is originally written. Try again or
+        search for a new movie
       </p>
     </article>
   );
@@ -33,5 +33,5 @@ const MovieNotFound = ({ notFound }) => {
 export default MovieNotFound;
 
 MovieNotFound.propTypes = {
-  notFound: PropTypes.func.isRequired,
+  notFound: PropTypes.string.isRequired,
 };

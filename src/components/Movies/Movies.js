@@ -6,7 +6,7 @@ import SearchInfo from "../../pages/SearchInfoPage/SearchInfo";
 import "./Movies.css";
 
 const Movies = ({ movies }) => {
-  const [movieToShow, setMovieToShow] = useState("");
+  const [movieToShow, setMovieToShow] = useState({});
 
   const displayMovieResults = () => {
     return movieToShow.Error ? (
@@ -26,5 +26,7 @@ const Movies = ({ movies }) => {
 export default Movies;
 
 Movies.propTypes = {
-  movies: PropTypes.objectOf(PropTypes.object).isRequired,
+  movies: PropTypes.objectOf(
+    PropTypes.oneOfType([PropTypes.string, PropTypes.array])
+  ).isRequired,
 };

@@ -1,6 +1,7 @@
 import mockAxios from "axios";
-import { getApiDataService } from "./index";
-import { sampleMovie } from "../fixtures";
+import getApiDataService from "./index";
+import sampleMovie from "../fixtures";
+
 const { REACT_APP_API_KEY } = process.env;
 
 describe("API Service Test Suite", () => {

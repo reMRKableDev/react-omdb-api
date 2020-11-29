@@ -1,7 +1,7 @@
 import React from "react";
 import { render, screen } from "@testing-library/react";
 import Movies from "./Movies";
-import { sampleMovie } from "../../fixtures";
+import sampleMovie from "../../fixtures";
 
 describe("Movies Test Suite", () => {
   test("should validate component renders with correct movie ", () => {

@@ -1,4 +1,4 @@
-import { getApiDataService } from "../services";
+import getApiDataService from "../services";
 
 export const handleChangeForTitleHelper = (event, setUserInputMethod) => {
   setUserInputMethod(event.target.value);

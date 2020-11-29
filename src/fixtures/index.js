@@ -1,4 +1,4 @@
-export const sampleMovie = {
+export default {
   Title: "Hello",
   Year: "2008",
   Rated: "N/A",

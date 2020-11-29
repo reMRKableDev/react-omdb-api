@@ -5,7 +5,7 @@ import "./App.css";
 import { handleApiCallHelper } from "../../helpers";
 
 const App = () => {
-  const [retrievedMovie, setRetrievedMovie] = useState("");
+  const [retrievedMovie, setRetrievedMovie] = useState({});
   const [movieToSearch, setMovieToSearch] = useState("");
 
   useEffect(

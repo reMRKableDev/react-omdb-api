@@ -59,5 +59,7 @@ const MovieFound = ({ foundMovie }) => {
 export default MovieFound;
 
 MovieFound.propTypes = {
-  foundMovie: PropTypes.objectOf(PropTypes.object).isRequired,
+  foundMovie: PropTypes.objectOf(
+    PropTypes.oneOfType([PropTypes.string, PropTypes.array])
+  ).isRequired,
 };

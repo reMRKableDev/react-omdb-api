@@ -1,7 +1,7 @@
 import React from "react";
 import { render, screen } from "@testing-library/react";
 import MovieFound from "./MovieFound";
-import { sampleMovie } from "../../../fixtures";
+import sampleMovie from "../../../fixtures";
 
 describe("MovieFound Test Suite", () => {
   beforeEach(() => {
