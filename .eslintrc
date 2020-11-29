@@ -1,8 +1,4 @@
 {
-  "env": {
-    "commonjs": true,
-    "es6": true
-  },
   "extends": [
     "react-app",
     "airbnb",
