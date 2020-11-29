@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 import "../Movies.css";
 
 const MovieFound = ({ foundMovie }) => {
@@ -56,3 +57,7 @@ const MovieFound = ({ foundMovie }) => {
 };
 
 export default MovieFound;
+
+MovieFound.propTypes = {
+  foundMovie: PropTypes.objectOf(PropTypes.object).isRequired,
+};

@@ -30,10 +30,6 @@ const Form = ({ handleMovieSearch }) => {
 
 export default Form;
 
-Form.defaultProps = {
-  handleMovieSearch: () => {},
-};
-
 Form.propTypes = {
-  handleMovieSearch: PropTypes.func,
+  handleMovieSearch: PropTypes.func.isRequired,
 };
