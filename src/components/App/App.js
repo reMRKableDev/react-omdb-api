@@ -8,9 +8,11 @@ const App = () => {
   const [retrievedMovie, setRetrievedMovie] = useState("");
   const [movieToSearch, setMovieToSearch] = useState("");
 
-  useEffect(() => {
-    movieToSearch && handleApiCallHelper(movieToSearch, setRetrievedMovie);
-  }, [movieToSearch]);
+  useEffect(
+    () =>
+      movieToSearch && handleApiCallHelper(movieToSearch, setRetrievedMovie),
+    [movieToSearch]
+  );
 
   const handleMovieToSearch = (movieInput) => {
     setMovieToSearch(movieInput);
