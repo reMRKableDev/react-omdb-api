@@ -1,9 +1,4 @@
 {
-  "env": {
-    "commonjs": true,
-    "es6": true,
-    "jest/globals": true
-  },
   "extends": [
     "react-app",
     "airbnb",
@@ -11,10 +6,6 @@
     "prettier",
     "prettier/react"
   ],
-  "globals": {
-    "Atomics": "readonly",
-    "SharedArrayBuffer": "readonly"
-  },
   "plugins": ["jsx-a11y", "prettier"],
   "rules": {
     "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }]
