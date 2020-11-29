@@ -1,6 +1,6 @@
-# React OMDB API 🚀🚀🚀
+# MovieFinder App: React OMDB API 🚀🚀🚀
 
-[![CodeFactor](https://www.codefactor.io/repository/github/remrkabledev/react-omdb-api/badge)](https://www.codefactor.io/repository/github/remrkabledev/react-omdb-api) [![Netlify Status](https://api.netlify.com/api/v1/badges/771fb2bb-c56a-4265-9392-c09736273e57/deploy-status)](https://app.netlify.com/sites/remrkable-moviefinder/deploys)
+![tests](https://github.com/reMRKableDev/react-omdb-api/workflows/tests/badge.svg) [![codecov](https://codecov.io/gh/reMRKableDev/react-omdb-api/branch/master/graph/badge.svg?token=14H0RAELNQ)](https://codecov.io/gh/reMRKableDev/react-omdb-api) [![CodeFactor](https://www.codefactor.io/repository/github/remrkabledev/react-omdb-api/badge)](https://www.codefactor.io/repository/github/remrkabledev/react-omdb-api) [![Renovate](https://img.shields.io/badge/renovate-enabled-brightgreen.svg)](https://renovatebot.com) [![Netlify Status](https://api.netlify.com/api/v1/badges/771fb2bb-c56a-4265-9392-c09736273e57/deploy-status)](https://app.netlify.com/sites/remrkable-moviefinder/deploys)
 
 This project is an introduction to using React.js for extracting data from an API. It focuses on:
 
