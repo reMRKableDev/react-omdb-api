@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from "react";
+import PropTypes from "prop-types";
 import MovieNotFound from "./MovieNotFound/MovieNotFound";
 import MovieFound from "./MovieFound/MovieFound";
 import SearchInfo from "../../pages/SearchInfoPage/SearchInfo";
 import "./Movies.css";
 
-const Movies = (props) => {
-  const { movies } = props;
+const Movies = ({ movies }) => {
   const [movieToShow, setMovieToShow] = useState("");
 
   const displayMovieResults = () => {
@@ -24,3 +24,7 @@ const Movies = (props) => {
 };
 
 export default Movies;
+
+Movies.propTypes = {
+  movies: PropTypes.objectOf(PropTypes.object).isRequired,
+};
