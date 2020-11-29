@@ -3,6 +3,7 @@ import sampleMovie from "../fixtures";
 import {
   handleApiCallHelper,
   handleFormSubmitHelper,
+  isMovieObjectEmptyHelper,
   handleMovieToSearchHelper,
   handleChangeForTitleHelper,
 } from "./index";
@@ -60,5 +61,18 @@ describe("Helper Functions Test Suite", () => {
     await handleApiCallHelper(userInputFake, setMovieMethodMock);
 
     expect(setMovieMethodMock).toBeCalled();
+  });
+
+  test("should validate isMovieObjectEmptyHelper returns true ", () => {
+    const movieFake = {};
+    const results = isMovieObjectEmptyHelper(movieFake);
+
+    expect(results).toBe(true);
+  });
+
+  test("should validate isMovieObjectEmptyHelper returns false ", () => {
+    const results = isMovieObjectEmptyHelper(sampleMovie);
+
+    expect(results).toBe(false);
   });
 });

@@ -3,6 +3,7 @@ import PropTypes from "prop-types";
 import MovieNotFound from "./MovieNotFound/MovieNotFound";
 import MovieFound from "./MovieFound/MovieFound";
 import SearchInfo from "../../pages/SearchInfoPage/SearchInfo";
+import { isMovieObjectEmptyHelper } from "../../helpers";
 import "./Movies.css";
 
 const Movies = ({ movies }) => {
@@ -20,8 +21,7 @@ const Movies = ({ movies }) => {
     setMovieToShow(movies);
   }, [movies]);
 
-  return Object.entries(movieToShow).length === 0 &&
-    movieToShow.constructor === Object ? (
+  return isMovieObjectEmptyHelper(movieToShow) ? (
     <SearchInfo />
   ) : (
     displayMovieResults()
