@@ -2,8 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import "../Movies.css";
 
-const MovieFound = ({ foundMovie }) => {
-  return (
+const MovieFound = ({ foundMovie }) => (
     <article>
       <h2>
         <span role="img" aria-label="coder">
@@ -54,7 +53,6 @@ const MovieFound = ({ foundMovie }) => {
       </section>
     </article>
   );
-};
 
 export default MovieFound;
 
