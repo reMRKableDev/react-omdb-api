@@ -2,8 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import "../Movies.css";
 
-const MovieNotFound = ({ notFound }) => {
-  return (
+const MovieNotFound = ({ notFound }) => (
     <article>
       <h2>Sorry... {notFound}</h2>
       <figure className="figure_container">
@@ -28,7 +27,6 @@ const MovieNotFound = ({ notFound }) => {
       </p>
     </article>
   );
-};
 
 export default MovieNotFound;
 

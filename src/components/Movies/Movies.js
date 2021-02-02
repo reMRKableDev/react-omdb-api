@@ -9,13 +9,11 @@ import "./Movies.css";
 const Movies = ({ movies }) => {
   const [movieToShow, setMovieToShow] = useState({});
 
-  const displayMovieResults = () => {
-    return movieToShow.Error ? (
+  const displayMovieResults = () => movieToShow.Error ? (
       <MovieNotFound notFound={movieToShow.Error} />
     ) : (
       <MovieFound foundMovie={movieToShow} />
     );
-  };
 
   useEffect(() => {
     setMovieToShow(movies);
