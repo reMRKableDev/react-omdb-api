@@ -3,8 +3,8 @@ import PropTypes from "prop-types";
 import "../Movies.css";
 import NotFoundIcon from "../../../assets/images/not-found.svg";
 
-const MovieNotFound = ({ notFound }) => {
-  const renderNotFoundNotice = `Sorry... ${notFound}`;
+const MovieNotFound = ({ notFoundError }) => {
+  const renderNotFoundNotice = `Sorry... ${notFoundError}`;
 
   return (
     <article>
@@ -27,5 +27,5 @@ const MovieNotFound = ({ notFound }) => {
 export default MovieNotFound;
 
 MovieNotFound.propTypes = {
-  notFound: PropTypes.string.isRequired,
+  notFoundError: PropTypes.string.isRequired,
 };
