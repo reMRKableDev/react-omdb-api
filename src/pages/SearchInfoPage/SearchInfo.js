@@ -1,7 +1,6 @@
 import React from "react";
 
-const SearchInfo = () => {
-  return (
+const SearchInfo = () => (
     <article>
       <h2>
         <span role="img" aria-label="coder">
@@ -14,6 +13,5 @@ const SearchInfo = () => {
       </h2>
     </article>
   );
-};
 
 export default SearchInfo;
