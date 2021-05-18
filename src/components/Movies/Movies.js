@@ -10,7 +10,7 @@ const Movies = ({ movies }) => {
   const [movieToShow, setMovieToShow] = useState({});
 
   const displayMovieResults = () => movieToShow.Error ? (
-      <MovieNotFound notFound={movieToShow.Error} />
+    <MovieNotFound notFound={movieToShow.Error} />
     ) : (
       <MovieFound foundMovie={movieToShow} />
     );
