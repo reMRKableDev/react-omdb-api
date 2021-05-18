@@ -12,8 +12,7 @@ const Form = ({ handleMovieSearch }) => {
   return (
     <form
       onSubmit={(e) =>
-        handleFormSubmitHelper(e, userInput, handleMovieSearch, setUserInput)
-      }
+        handleFormSubmitHelper(e, userInput, handleMovieSearch, setUserInput)}
       className="form"
     >
       <input
