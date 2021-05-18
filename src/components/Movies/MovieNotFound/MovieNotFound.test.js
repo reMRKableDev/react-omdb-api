@@ -1,5 +1,6 @@
 import React from "react";
 import { render, screen } from "@testing-library/react";
+
 import MovieNotFound from "./MovieNotFound";
 
 describe("MovieNotFound Test Suite", () => {
