@@ -52,10 +52,14 @@
     }
   },
   "devDependencies": {
+    "@babel/core": "^7.26.0",
+    "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
+    "@babel/plugin-transform-private-property-in-object": "^7.25.9",
     "eslint-config-airbnb": "19.0.4",
     "eslint-config-prettier": "9.1.0",
     "eslint-plugin-jsx-a11y": "6.9.0",
     "eslint-plugin-prettier": "5.2.1",
-    "prettier": "3.3.3"
+    "prettier": "3.3.3",
+    "use": "^3.1.1"
   }
 }
