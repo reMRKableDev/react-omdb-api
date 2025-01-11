@@ -4,7 +4,7 @@ import Movies from "../Movies/Movies";
 import "./App.css";
 import { handleApiCallHelper, setMovieToSearchHelper } from "../../helpers";
 
-const App = () => {
+function App() {
   const [retrievedMovie, setRetrievedMovie] = useState({});
   const [movieToSearch, setMovieToSearch] = useState("");
 
@@ -36,6 +36,6 @@ const App = () => {
       </section>
     </div>
   );
-};
+}
 
 export default App;

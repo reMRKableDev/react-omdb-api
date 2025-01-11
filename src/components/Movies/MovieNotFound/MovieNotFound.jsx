@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import "../Movies.css";
 import NotFoundIcon from "../../../assets/images/not-found.svg";
 
-const MovieNotFound = ({ notFoundError }) => {
+function MovieNotFound({ notFoundError }) {
   const renderNotFoundNotice = `Sorry... ${notFoundError}`;
 
   return (
@@ -22,7 +22,7 @@ const MovieNotFound = ({ notFoundError }) => {
       </p>
     </article>
   );
-};
+}
 
 export default MovieNotFound;
 
