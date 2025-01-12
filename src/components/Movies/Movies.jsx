@@ -29,10 +29,10 @@ function Movies({ movies }) {
   );
 }
 
-export default Movies;
-
 Movies.propTypes = {
   movies: PropTypes.objectOf(
     PropTypes.oneOfType([PropTypes.string, PropTypes.array])
   ).isRequired,
 };
+
+export default Movies;

@@ -24,8 +24,8 @@ function MovieNotFound({ notFoundError }) {
   );
 }
 
-export default MovieNotFound;
-
 MovieNotFound.propTypes = {
   notFoundError: PropTypes.string.isRequired,
 };
+
+export default MovieNotFound;
