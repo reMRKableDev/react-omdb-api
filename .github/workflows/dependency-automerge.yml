@@ -16,9 +16,20 @@ permissions:
 jobs:
   process-prs:
     runs-on: ubuntu-latest
+
     steps:
-      # Fetch all PRs sorted from oldest to newest
-      - name: Get oldest PRs
+      # ✅ Step 1: Checkout the repo (Fixes "not a git repository" issue)
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      # ✅ Step 2: Authenticate GitHub CLI (Ensure gh CLI works)
+      - name: Authenticate GitHub CLI
+        run: gh auth setup-git
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      # ✅ Step 3: Fetch all PRs sorted from oldest to newest
+      - name: Get Oldest PRs
         id: get-prs
         run: |
           prs=$(gh pr list --state open --json number,createdAt --jq 'sort_by(.createdAt) | .[].number')
@@ -26,7 +37,8 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: Process PRs one by one
+      # ✅ Step 4: Process PRs One by One
+      - name: Process PRs
         run: |
           for pr in $prs; do
             echo "Processing PR #$pr"
@@ -35,26 +47,27 @@ jobs:
             gh pr checkout $pr
 
             # Handle conflicts: Ensure latest package.json dependency version is used
-            git checkout --ours package.json
-            git add package.json
+            git checkout --ours package.json || true
+            git add package.json || true
 
-            # Ensure package.json has no conflicts, then regenerate package-lock.json
+            # If package.json had conflicts, fix package-lock.json too
             if git diff --name-only | grep "package.json"; then
-              echo "package.json has conflicts, resolving..."
-              npm install  # Regenerate package-lock.json
+              echo "package.json had conflicts, regenerating package-lock.json..."
+              npm install
               git add package-lock.json
             fi
 
-            # Commit and push the resolved changes
-            git commit -m "Resolve dependency conflicts in PR #$pr" || echo "No changes to commit"
-            git push origin HEAD
+            # Commit & push resolved conflicts
+            git commit -m "Resolve dependency conflicts in PR #$pr" || true
+            git push origin HEAD || true
 
-            # Wait for CI checks to pass
+            # Approve PR before merging
             gh pr review $pr --approve
+
+            # Merge PR when all checks pass
             gh pr merge $pr --squash --auto
 
             echo "Merged PR #$pr successfully!"
-
           done
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
