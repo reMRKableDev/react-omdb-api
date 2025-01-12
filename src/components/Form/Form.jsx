@@ -6,7 +6,7 @@ import {
 } from "../../helpers";
 import "./Form.css";
 
-const Form = ({ handleMovieSearch }) => {
+function Form({ handleMovieSearch }) {
   const [userInput, setUserInput] = useState("");
 
   return (
@@ -25,10 +25,10 @@ const Form = ({ handleMovieSearch }) => {
       <button type="submit">Search</button>
     </form>
   );
-};
-
-export default Form;
+}
 
 Form.propTypes = {
   handleMovieSearch: PropTypes.func.isRequired,
 };
+
+export default Form;

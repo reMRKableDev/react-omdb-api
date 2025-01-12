@@ -8,7 +8,7 @@ import MovieNotFound from "./MovieNotFound/MovieNotFound";
 import MovieFound from "./MovieFound/MovieFound";
 import SearchInfo from "../../pages/SearchInfoPage/SearchInfo";
 
-const Movies = ({ movies }) => {
+function Movies({ movies }) {
   const [movieToShow, setMovieToShow] = useState({});
 
   const displayMovieResults = () =>
@@ -27,12 +27,12 @@ const Movies = ({ movies }) => {
   ) : (
     displayMovieResults()
   );
-};
-
-export default Movies;
+}
 
 Movies.propTypes = {
   movies: PropTypes.objectOf(
     PropTypes.oneOfType([PropTypes.string, PropTypes.array])
   ).isRequired,
 };
+
+export default Movies;

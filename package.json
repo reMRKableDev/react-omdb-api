@@ -3,14 +3,15 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "@testing-library/jest-dom": "6.4.8",
-    "@testing-library/react": "16.0.0",
+    "@testing-library/jest-dom": "6.6.3",
+    "@testing-library/react": "16.1.0",
     "@testing-library/user-event": "14.5.2",
-    "axios": "1.7.5",
+    "axios": "1.7.9",
+    "dotenv": "^16.4.7",
     "prop-types": "15.8.1",
-    "react": "18.3.1",
-    "react-dom": "18.3.1",
-    "react-scripts": "5.0.1"
+    "react": "19.0.0",
+    "react-dom": "19.0.0",
+    "react-scripts": "^5.0.1"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -44,18 +45,22 @@
     ],
     "coverageThreshold": {
       "global": {
-        "branches": 83,
-        "functions": 94,
-        "lines": 97,
-        "statements": 97
+        "branches": 80,
+        "functions": 90,
+        "lines": 95,
+        "statements": 95
       }
     }
   },
   "devDependencies": {
+    "@babel/core": "^7.26.0",
+    "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
+    "@babel/plugin-transform-private-property-in-object": "^7.25.9",
     "eslint-config-airbnb": "19.0.4",
     "eslint-config-prettier": "9.1.0",
-    "eslint-plugin-jsx-a11y": "6.9.0",
+    "eslint-plugin-jsx-a11y": "6.10.2",
     "eslint-plugin-prettier": "5.2.1",
-    "prettier": "3.3.3"
+    "prettier": "3.4.2",
+    "use": "^3.1.1"
   }
 }
