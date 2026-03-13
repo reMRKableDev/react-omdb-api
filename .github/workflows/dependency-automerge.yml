@@ -18,17 +18,19 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      # ✅ Step 1: Checkout the repo (Fixes "not a git repository" issue)
       - name: Checkout Repository
         uses: actions/checkout@v6
 
-      # ✅ Step 2: Authenticate GitHub CLI (Ensure gh CLI works)
+      - name: Set Git Identity
+        run: |
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git config --global user.name "github-actions[bot]"
+
       - name: Authenticate GitHub CLI
         run: gh auth setup-git
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
-      # ✅ Step 3: Fetch all PRs sorted from oldest to newest
       - name: Get Oldest PRs
         id: get-prs
         run: |
@@ -37,11 +39,16 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
-      # ✅ Step 4: Process PRs One by One
       - name: Process PRs
         run: |
           for pr in $prs; do
             echo "Processing PR #$pr"
+
+            # Skip draft PRs
+            if [ "$(gh pr view $pr --json isDraft --jq '.isDraft')" = "true" ]; then
+              echo "PR #$pr is a draft; skipping..."
+              continue
+            fi
 
             # Checkout PR branch
             gh pr checkout $pr
